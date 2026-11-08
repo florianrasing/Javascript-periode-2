@@ -8,3 +8,5 @@ const interval = setInterval(() => {
     that.style.backgroundColor = hex;
     thism.innerHTML = `Current RGB code is: ${that.style.backgroundColor}`;
 }, 1000);
+
+// ik wou het met hex doen maar het had er geen zin in dus i guess niet. rgb it is
