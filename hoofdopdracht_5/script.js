@@ -14,7 +14,16 @@ let hongertotal = 100;
 let energietotal = 100;
 let geluktotal = 100;
 
-setInterval(() => {
+const interval = setInterval(() => {
+    hongertotal = Math.max(0, hongertotal);
+    energietotal = Math.max(0, energietotal);
+    geluktotal = Math.max(0, geluktotal);
+
+    if (hongertotal === 0 || energietotal === 0 || geluktotal === 0) {
+        clearInterval(interval);
+        tamagotchistatus.textContent = "you fucking killed him";
+        return;
+    }
     const needs = [];
 
 
@@ -86,8 +95,7 @@ setInterval(() => {
         tamagotchistatus.innerHTML = "you fucking killed him";
     }
 
-}, 100);
-
+}, 1000);
 feedbutton.addEventListener("click", () => {
     hongertotal += 10;
 });
